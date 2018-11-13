@@ -36,6 +36,7 @@ export default {
           this.num=25;
           i++;
           this.height= i*11
+          this.backgroundColor = 'blue'
           if(i===10){
             clearInterval(time1)
           }
