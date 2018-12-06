@@ -27,7 +27,7 @@ VueSSR.createApp = function (context) {
       ssr: true,
     })
 
-    // set router's location
+    // router
     router.push(context.url)
 
     // wait until router has resolved possible async hooks
