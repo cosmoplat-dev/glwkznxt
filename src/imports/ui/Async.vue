@@ -13,7 +13,7 @@ export default {
       loading: true,
     }
   },
-
+//
   async mounted () {
     /* Eager */
     // this.comp = require('./Svg.vue').default

@@ -42,7 +42,7 @@ export default {
         setTimeout(()=>{
           this.opacity = "opacity:1";
           this.time = setInterval(()=>{
-            
+            //
             this.num++;
             this.color='color:red';
             if(this.num===26){
