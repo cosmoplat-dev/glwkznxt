@@ -6,7 +6,7 @@
       <span></span>
       <p class="num" :style="color">{{num}}</p>
       <img src="/fire.png" width="80px" class="fire" :style="opacity">
-      <div class="water" :style="height"></div>
+      <div class="water" :style="{height: height + 'px', 'background-color': backgroundColor}"></div>
     </div>
     <div>
       <button @click="click">效果演示</button>
@@ -23,7 +23,8 @@ export default {
       ok:true,
       color:'color:black',
       opacity:"opacity:0",
-      height:"height: 0px;background-color: blue;"
+      height: 0,
+      backgroundColor: 'blue'
     }
   },
   methods: {
@@ -34,7 +35,8 @@ export default {
         var time1 = setInterval(()=>{
           this.num=25;
           i++;
-          this.height=`height: ${i*11}px;background-color: blue;`
+          this.height= i*11
+          this.backgroundColor = 'blue'
           if(i===10){
             clearInterval(time1)
           }
@@ -46,18 +48,23 @@ export default {
             this.num++;
             this.color='color:red';
             if(this.num===26){
-              this.height=`height: ${i*11}px;background-color: rgb(0, 255, 255)`;
+              this.height = i*11
+              this.backgroundColor = 'rgb(0, 255, 255)'
             }else if(this.num===27){
-              this.height=`height: ${i*11}px;background-color: rgb(0, 255, 255)`;
+              this.height = i*11
+              this.backgroundColor = 'rgb(0, 255, 255)'
             }else if(this.num===28){
-              this.height=`height: ${i*11}px;background-color: rgb(0, 255, 170)`;
+              this.height = i*11
+              this.backgroundColor = 'rgb(0, 255, 170)'
             }else if(this.num===29){
-              this.height=`height: ${i*11}px;background-color: rgb(0, 255, 98)`;
+              this.height = i*11
+              this.backgroundColor = 'rgb(0, 255, 98)'
             }
             if(this.num===30){
               this.color='color:black';
               this.opacity = "opacity:0";
-              this.height=`height: ${i*11}px;background-color: rgb(0, 255, 13)`;
+              this.height = i*11
+              this.backgroundColor = 'rgb(0, 255, 13)'
               clearInterval(this.time);
             }
           },3000)
@@ -65,7 +72,8 @@ export default {
         setTimeout(()=>{
           time2 = setInterval(()=>{
             i--;
-            this.height=`height: ${i*11}px;background-color: rgb(0, 255, 13)`;
+            this.height = i*11
+            this.backgroundColor = 'rgb(0, 255, 13)';
             if(i===0){
               clearInterval(time2);
               this.ok = true;
